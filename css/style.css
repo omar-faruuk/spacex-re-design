@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+@import './utilities.css';
+@import './variable.css';
+
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    --webkit-font-smoothing: antialiased;
+}
+body{
+    font-family: 'Montserrat', sans-serif;
+    color: var(--pure);
+    height: 4000px;
+    background: var(--primary);
+   
+}
+header{
+    background: linear-gradient(135deg, rgba(0,0,0,1),rgba(0,0,0,0.2)),
+    url('../img/sunrise.jpg');
+    min-height: 100vh;
+    background-size: cover;
+}
+header nav{
+    padding: 20px 40px 20px 100px;
+    display: grid;
+    grid-template-columns:1fr 2fr;
+    align-items: center;
+    border-bottom: 1px solid var(--gray);
+}
+header nav .nav-right{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+header nav .nav-right a{
+    color: var(--pure);
+    text-decoration: none;
+    margin-right: 30px;
+    position: relative;
+}
+header nav .nav-right a:after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -30px;
+    background: var(--pure);
+    width: 0;
+    height: 2px;
+    transition: width 0.3s ease;
+}
+header nav .nav-right a:hover:after{
+  width: 70%;
+}
+header nav .nav-right a.active:after{
+    width: 70%;
+}
+header nav .nav-right .search{
+    background: var(--dark);
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    border-radius: 50px;
+   
+}
+header nav .nav-right .search input{
+    background: transparent;
+    color: var(--pure);
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding-left: 16px;
+    
+}
+section.hero .social div{
+    border: 2px solid var(--pure);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+   
+}
+@keyframes moveIn {
+    from{
+     transform: translateX(-100px);
+    }
+    to{
+     transform: translateX(0px);
+     opacity: 1;
+    }
+}
+section.hero .social a{
+    color: var(--pure);
+}
+section.hero .social div:hover{
+    background: var(--pure);
+   
+}
+section.hero .social div:hover a{
+    color: var(--dark);
+    transition: all 0.5s ease-in-out;
+}
+section.hero{
+    position: relative;
+}
+section.hero .social {
+    border-right: 1px solid var(--gray);
+    width: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.hero .cta{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: calc(100vh -80px);
+   
+}
+.hero .cta h1{
+    color: var(--pure);
+    font-weight: 400;
+    line-height: 1.7;
+    font-size: 22px;
+    padding-bottom: 30px;
+}
+.hero .cta div{
+    flex: 1;
+}
+.hero .cta .left-section{
+    padding: 0 60px 0 30px;
+}
+
+.hero .cta .right-section img{
+    height: 70vh;
+    transform: rotate(15deg);
+    animation: moveInSpace 12s ease-in-out infinite alternate;
+   
+    
+}
+@keyframes moveInSpace {
+    50% {
+        transform: translateY(100px) rotate(-30deg) scale(0.7);
+    }
+}
+/* end header...... */
+
+section.strip{
+    display: flex;
+    background: var(--dark);
+    align-items: center;
+    justify-content: space-around;
+    padding: 50px 0;
+}
+section.rocket{
+    display: grid;
+    grid-template-columns: 1fr 100px 1fr;
+    grid-gap: 80px;
+    padding: 100px 0;
+}
+section.rocket .rocket-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+section.rocket .rocket-body span{
+    font-size: 0;
+}
+section.rocket .rocket-body span img{
+    width: 100%;
+}
+section.rocket .block{
+    width: 70%;
+}
+section.rocket .block h1{
+    font-size: 32px;
+    font-weight: 400;
+}
+section.rocket .block .with-underline{
+    position: relative;
+    margin-bottom: 38px;
+}
+section.rocket .block .with-underline:before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -12px;
+    background: var(--pure);
+    width: 38%;
+    height: 2px;
+    display: block;
+}
+section.rocket .block h1.with-underline:before{
+    width: 20%;
+}
+section.rocket .block p{
+    line-height: 1.6;
+}
+section.rocket .block h2{
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+section.rocket .block.paylod{
+    padding-top: 130px;
+}
+section.rocket .block.paylod h2{
+    margin-left: 80px;
+}
+section.rocket .block.dragon{
+    padding-top: 120px;
+}
+section.rocket .block button{
+    margin-top: 30px;
+}
+section.rocket .block.composite{
+    margin-top: 60px;
+}
+section.rocket .block.stage{
+    margin-top: 60px;
+}
+section.rocket .block.stage2{
+    margin-top: 60px;
+}
+section.rocket .block.capecity{
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+   
+}
+section.rocket .block.capecity >div:first-child{
+    margin-right: 40px;
+}
+section.rocket .block.capecity h4{
+    font-size: 12px;
+    font-weight: 400;
+}
+section.rocket .block.capecity h6{
+    font-size: 40px;
+    font-weight: 400;
+}
+section.rocket .block.capecity h6 small{
+    font-size: 12px;
+}
+section.rocket .right-block .block.capecity{
+    padding-top: 100px;
+}
+section.rocket .right-block .block.capecity.single{
+    padding-top: 40px;
+}
+section.rocket .right-block .block.engines{
+    padding-top: 40px;
+   display: flex;
+   justify-content: center;
+}
+section.rocket .right-block .block.engines img{
+    width: 180px;
+}
+section.rocket .right-block .block.marine{
+    padding-top: 120px;
+    width: 70%;
+}
+section.rocket .right-block .block.marine h2{
+    font-size: 14px;
+    padding-left: 100px;
+    margin-bottom: 26px;
+}
